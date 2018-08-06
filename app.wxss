@@ -1,0 +1,66 @@
+text{
+    font-family: MicroSoft Yahei;
+    font-size: 24rpx;
+    color: #666;
+}
+
+input{
+    font-family: MicroSoft YaHei;
+}
+
+.fullScreen{
+  font-size: 0;
+  width:100%; height: 100vh;
+}
+
+.float-right-wrapper{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100rpx;
+  text-align: center;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.float-right-item {
+  margin-bottom: 20rpx;
+}
+.float-right-item:last-child{
+  margin-bottom: 0;
+}
+.float-right-item.stop{
+  margin: 20rpx 0 0 0;
+}
+.float-right-item .icon{
+  width: 60rpx; 
+  height: 60rpx; 
+  display:inline-block;
+  border-radius: 60rpx;
+}
+.float-right-item .text{
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.set-wrapper{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 999;
+  padding-top: 50rpx;
+}
+.button_bottom
+{
+  width: 100rpx; 
+  height: 100rpx; 
+  margin-left:calc(100% / 10 - 50rpx); 
+  margin-right:calc(100% / 10 - 50rpx);
+  display:inline-block;
+}

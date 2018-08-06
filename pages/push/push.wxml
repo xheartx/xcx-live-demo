@@ -1,0 +1,60 @@
+<!--pages/push/push.wxml-->
+<import src="/base/footer/footer.wxml" />
+<import src="/base/comment/comment.wxml" />
+<view class="fullScreen">
+  <live-pusher
+    class="live-pusher"
+    style="width:100%; height:{{fullScreen?'100%':'calc(100% - 80rpx)'}}; background-image:url({{waitingImage}})"
+    id="pusher"
+    url="{{pushUrl}}" 
+    autopush='{{autopush}}'
+    beauty="{{beauty}}"
+    whiteness="{{whiteness}}"
+    mode="{{mode}}"
+    enable-camera="{{enableCamera}}"
+    muted="{{muted}}"
+    debug="{{debug}}"
+    waiting-image="{{waitingImage}}"
+    bindstatechange="onPush">
+    <cover-view class='float-right-wrapper'>
+      <cover-view class='float-right-item avatar'>
+        <cover-image class="icon" src="{{avatarUrl}}"></cover-image>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/people.png"></cover-image>
+        <cover-view class='text'>9</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/message.png"></cover-image>
+        <cover-view class='text'>50</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/share.png"></cover-image>
+        <cover-view class='text'>3</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item' bindtap='onSwitchCameraClick'>
+        <cover-image class="icon" src="/images/icon/switch-camera.png"></cover-image>
+        <cover-view class='text' style='font-size:17rpx'>切换摄像头</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item' bindtap='showSet'>
+        <cover-image class="icon" src="/images/icon/set.png"></cover-image>
+        <cover-view class='text'>设置</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item stop' bindtap='togglePush'>
+        <cover-image class="icon" src="/images/icon/{{playing?'pause':'resume'}}.png"></cover-image>
+      </cover-view>
+    </cover-view>
+    <cover-view wx:if="{{showSet}}" class='set-wrapper' bindtap='showSet'>
+        <cover-image class="button_bottom" src="/images/Resources/{{beauty == 0 ? 'beauty':'beauty-dis'}}.png" catchtap='onBeautyClick'></cover-image>
+        <cover-image class="button_bottom" src="/images/Resources/{{mode == 'HD'? 'HD':mode == 'FHD'?'super':'SD'}}.png" catchtap='onModeClick'></cover-image>
+        <cover-image class="button_bottom" src="/images/Resources/{{enableCamera?'off':'off_press'}}.png" catchtap='onEnableCameraClick'></cover-image>
+
+        <cover-image class="button_bottom" src="/images/Resources/{{muted?'mute_press':'mute'}}.png" catchtap='onMuteClick'></cover-image>
+
+        <cover-image class="button_bottom" src="/images/Resources/{{debug?'log2':'log'}}.png" catchtap='onLogClick'></cover-image>
+    </cover-view>
+    <template is="comment" data="{{commentList}}"/>
+  </live-pusher>
+  <template is="footer"/>
+</view>
+

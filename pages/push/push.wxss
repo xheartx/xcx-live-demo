@@ -1,0 +1,7 @@
+/* pages/push/push.wxss */
+@import '/base/footer/footer.wxss';
+@import '/base/comment/comment.wxss';
+
+.live-pusher{
+  background-size: 100% 100%;
+}

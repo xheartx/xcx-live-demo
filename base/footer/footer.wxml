@@ -1,0 +1,14 @@
+<template name="footer">
+  <form bindsubmit="formSubmit">
+    <view class='footer'>
+      <view class='icon praise'>
+        <image src="/images/icon/praise.png"></image>
+      </view>
+      <view class='icon like'>
+        <image src="/images/icon/like.png"></image>
+      </view>
+      <input name="comment" placeholder="想说点什么" class='input'/>
+      <button formType="submit" class='submit'>发言</button>
+    </view>
+  </form>
+</template>

@@ -1,0 +1,10 @@
+<view class="container">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <text class="motto">Hello, {{nickName}}</text>
+    <view class="journey-container" bindtap="goPush">
+        <text class="journey">发起直播</text>
+    </view>
+    <view class="journey-container" bindtap="goLive">
+        <text class="journey">观看直播</text>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/push/push",
+    "pages/liveroom/liveroom"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#405f80"
+  }
+}

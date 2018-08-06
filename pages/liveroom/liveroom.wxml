@@ -1,0 +1,50 @@
+<!--pages/liveroom/liveroom.wxml-->
+<import src="/base/footer/footer.wxml" />
+<import src="/base/comment/comment.wxml" />
+<view class='fullScreen'>
+  <live-player
+    class="live-player"
+    id="livePlayer"
+    style="width:100%; height:{{fullScreen?'100%':'calc(100% - 80rpx)'}}; background-image:url({{waitingImage}})"
+    mode="live"
+    object-fit="{{objectFit}}"
+    src="{{playUrl}}" 
+    autoplay="{{autoplay}}"
+    muted="{{muted}}"
+    orientation="{{orientation}}"
+    debug="{{debug}}"
+    bindstatechange="onPlayEvent"
+    bindfullscreenchange="onFullScreenChange"> 
+    <cover-view class='float-right-wrapper'>
+      <cover-view class='float-right-item avatar'>
+        <cover-image class="icon" src="{{avatarUrl}}"></cover-image>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/people.png"></cover-image>
+        <cover-view class='text'>9</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/message.png"></cover-image>
+        <cover-view class='text'>50</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item'>
+        <cover-image class="icon" src="/images/icon/share.png"></cover-image>
+        <cover-view class='text'>3</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item' bindtap='onMuteClick'>
+        <cover-image class="icon" src="/images/icon/{{muted ? 'off-sound' : 'on-sound'}}.png"></cover-image>
+        <cover-view class='text'>静音</cover-view>
+      </cover-view>
+      <cover-view class='float-right-item' bindtap='onFullScreenClick'>
+        <cover-image class="icon" src="/images/icon/{{fullScreen ? 'exit-' : ''}}full-screen.png"></cover-image>
+        <cover-view class='text'>{{fullScreen ? '退出' : ''}}全屏</cover-view>
+      </cover-view>
+      <!-- <cover-view class='float-right-item' bindtap='onOrientationClick'>
+        <cover-image class="icon" src="/images/icon/turn-screen.png"></cover-image>
+        <cover-view class='text' style='font-size:17rpx'>切换横屏</cover-view>
+      </cover-view> -->
+    </cover-view>
+    <template is="comment" data="{{commentList}}"/>
+  </live-player>
+  <template is="footer"/>
+</view>

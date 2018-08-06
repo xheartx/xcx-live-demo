@@ -1,0 +1,12 @@
+<template name="comment">
+  <cover-view class='comment-wrapper'>
+    <cover-view class='comment-item prompt'>
+      <cover-image class="icon" src="/images/icon/warn.png"></cover-image>
+      <cover-view>公共直播间，请文明用语，禁止发布违法信息。</cover-view>
+    </cover-view>
+    <cover-view class='comment-item' wx:for="{{commentList}}" wx:key="{{item}}">
+      <cover-view class='name'>{{item.name}}:</cover-view>
+      <cover-view class='content'>{{item.comment}}</cover-view>
+    </cover-view>
+  </cover-view>
+</template>
